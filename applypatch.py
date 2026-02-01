@@ -40,7 +40,7 @@ patches64 = {
     [('4883ec480f10', 0), '31c0c3'], #c_frustumcull patches
     [('753cf30f10', 0), 'eb'], # brush entity backfaces
     [('0f8d????????4863c3', 0), 'e9d600000090'], # world backfaces
-    [('753c498b4204', 0), 'eb'], # world backfaces
+    [('75??41f70200020000', 0), 'eb'], # world backfaces
 ],
 'bin/win64/shaderapidx9.dll': [
     [('480f4ec1c7', 0), '90909090'], # four hardware lights
@@ -208,4 +208,5 @@ for fname in patches:
 
 if problems:
     logwarn('\nWarning: Not all patches applied successfully')
+
 
