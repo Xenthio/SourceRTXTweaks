@@ -39,8 +39,8 @@ patches64 = {
 'bin/win64/engine.dll': [
     [('4883ec480f10', 0), '31c0c3'], #c_frustumcull patches
     [('753cf30f10', 0), 'eb'], # brush entity backfaces
-    [('0f8d????????4863c3', 0), 'e9d600000090'], # world backfaces
-    [('75??41f70200020000', 0), 'eb'], # world backfaces
+    [('7e??8bef', 0), 'eb'], # world backfaces (R_DrawLeaf, search for "CBitVec invalid set bitNum" string)
+    [('75??f745', 0), 'eb'], # world backfaces (R_DrawLeaf, search for "CBitVec invalid set bitNum" string)
 ],
 'bin/win64/shaderapidx9.dll': [
     [('480f4ec1c7', 0), '90909090'], # four hardware lights
@@ -208,5 +208,6 @@ for fname in patches:
 
 if problems:
     logwarn('\nWarning: Not all patches applied successfully')
+
 
 
