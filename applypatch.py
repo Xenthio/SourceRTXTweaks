@@ -12,7 +12,7 @@ patches32 = {
 ],
 'bin/shaderapidx9.dll': [
     [('b80000000f4c', 4), '909090'], # four hardware lights
-    [('9483c410', 1), '85c07502b0048be55dc3'], # zero sized buffer
+    [('9483c4108be55dc3cccccc', 1), '85c07502b0048be55dc3'], # zero sized buffer
     [('558bec8b451053568b750833', 0), '31c0c3'], # shader constants
 ],
 'bin/client.dll': [
@@ -29,25 +29,34 @@ patches32 = {
 'bin/datacache.dll': [
     [('647838302e767478', 0), '647839302e767478'], # force load dx9 vtx
 ],
+'bin/materialsystem.dll': [
+    [('f77d945f3bc15e0f4fc18be55dc20400cccccccccccc', 0), '8b7d9485ff7402f7ff5f39c85e0f4fc189ec5dc20400'], # zero sized buffer protection
+],
 }
 
 # Incomplete Garry's Mod 64bit patches
 patches64 = {
 'bin/win64/engine.dll': [
-    # TODO: Missing c_frustumcull patches
+    [('4883ec480f10', 0), '31c0c3'], #c_frustumcull patches
     [('753cf30f10', 0), 'eb'], # brush entity backfaces
-    [('7e5244', 0), 'eb'], # world backfaces
-    [('753c498b4204', 0), 'eb'], # world backfaces
+    [('0f8d????????4863c3', 0), 'e9d600000090'], # world backfaces
+    [('75??41f70200020000', 0), 'eb'], # world backfaces
 ],
 'bin/win64/shaderapidx9.dll': [
     [('480f4ec1c7', 0), '90909090'], # four hardware lights
-    [('4833cce8??c503004881c448', 0), '85c0750466b80400'], # zero sized buffer
+    [('4833cce8????03004881c448', 0), '85c0750466b80400'], # zero sized buffer
     [('4883ec084c', 0), '31c0c3'] # shader constants
 ],
 'bin/win64/client.dll': [
     [('4883ec480f1022', 0), '31c0c3'], # c_frustumcull
     [('0fb68154', 0), 'b001c3'], # r_forcenovis [getter]
-]
+],
+'bin/win64/materialsystem.dll': [
+    [('f77c24683bc10f4fc1488b8c24300100004833cce8????04004881c448010000', 0), '448b4424684585c0740341f7f839c80f4fc14881c448010000c3'], # zero sized buffer protection
+],
+'bin/win64/datacache.dll': [
+    [('647838302e767478', 0), '647839302e767478'], # force load dx9 vtx
+],
 }
 
 # Colored log output
@@ -199,3 +208,5 @@ for fname in patches:
 
 if problems:
     logwarn('\nWarning: Not all patches applied successfully')
+
+
